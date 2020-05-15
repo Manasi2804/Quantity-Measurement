@@ -17,10 +17,16 @@ public class QuantityMeasurementTest {
         Assert.assertEquals("equal", result1);
     }
     @Test
-    public void givenTwoFeetObjects_WhenOneOfThemIsNull_ShouldReturnFalse() {
+    public void givenFeetObjects_WhenOneOfThemIsNull_ShouldReturnFalse() {
         Feet f1 = new Feet(0.0);
         Feet f2 = null;
         String result1 = quantityMeasurement.compare(f1, f2);
         Assert.assertEquals("not equal", result1);
+    }
+    @Test
+    public void givenFeetObjects_IfObjectsAreSame_ShouldReturnTrue() {
+        Feet f1 = new Feet(0.0);
+        String result1 = quantityMeasurement.compare(f1, f1);
+        Assert.assertEquals("equal", result1);
     }
 }
